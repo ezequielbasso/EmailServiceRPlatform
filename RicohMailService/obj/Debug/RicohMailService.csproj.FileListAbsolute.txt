@@ -1,0 +1,16 @@
+C:\WORKSPACE_GIT\GlobalFarm\RicohMailService\obj\Debug\RicohMailService.csprojAssemblyReference.cache
+C:\WORKSPACE_GIT\GlobalFarm\RicohMailService\obj\Debug\RicohMailService.ProjectInstaller.resources
+C:\WORKSPACE_GIT\GlobalFarm\RicohMailService\obj\Debug\RicohMailService.csproj.GenerateResource.cache
+C:\WORKSPACE_GIT\GlobalFarm\RicohMailService\bin\Debug\RicohMailService.exe.config
+C:\WORKSPACE_GIT\GlobalFarm\RicohMailService\bin\Debug\RicohMailService.exe.manifest
+C:\WORKSPACE_GIT\GlobalFarm\RicohMailService\bin\Debug\RicohMailService.application
+C:\WORKSPACE_GIT\GlobalFarm\RicohMailService\bin\Debug\RicohMailService.exe
+C:\WORKSPACE_GIT\GlobalFarm\RicohMailService\bin\Debug\RicohMailService.pdb
+C:\WORKSPACE_GIT\GlobalFarm\RicohMailService\bin\Debug\IMAP.dll
+C:\WORKSPACE_GIT\GlobalFarm\RicohMailService\bin\Debug\ImapX.dll
+C:\WORKSPACE_GIT\GlobalFarm\RicohMailService\bin\Debug\IMAP.pdb
+C:\WORKSPACE_GIT\GlobalFarm\RicohMailService\obj\Debug\RicohMailService.exe.manifest
+C:\WORKSPACE_GIT\GlobalFarm\RicohMailService\obj\Debug\RicohMailService.application
+C:\WORKSPACE_GIT\GlobalFarm\RicohMailService\obj\Debug\RicohMailService.csproj.CopyComplete
+C:\WORKSPACE_GIT\GlobalFarm\RicohMailService\obj\Debug\RicohMailService.exe
+C:\WORKSPACE_GIT\GlobalFarm\RicohMailService\obj\Debug\RicohMailService.pdb

@@ -1,0 +1,15 @@
+C:\WORKSPACE\GlobalFarmEmail\IMAP\bin\Release\IMAP.dll
+C:\WORKSPACE\GlobalFarmEmail\IMAP\bin\Release\IMAP.pdb
+C:\WORKSPACE\GlobalFarmEmail\IMAP\bin\Release\BouncyCastle.Crypto.dll
+C:\WORKSPACE\GlobalFarmEmail\IMAP\bin\Release\ImapX.dll
+C:\WORKSPACE\GlobalFarmEmail\IMAP\obj\Release\IMAP.csprojAssemblyReference.cache
+C:\WORKSPACE\GlobalFarmEmail\IMAP\obj\Release\IMAP.csproj.CoreCompileInputs.cache
+C:\WORKSPACE\GlobalFarmEmail\IMAP\obj\Release\IMAP.csproj.CopyComplete
+C:\WORKSPACE\GlobalFarmEmail\IMAP\obj\Release\IMAP.dll
+C:\WORKSPACE\GlobalFarmEmail\IMAP\obj\Release\IMAP.pdb
+C:\WORKSPACE\GlobalFarmEmail\IMAP\bin\Release\IMAP.dll.config
+C:\WORKSPACE\GlobalFarmEmail\IMAP\bin\Release\BD.dll
+C:\WORKSPACE\GlobalFarmEmail\IMAP\bin\Release\EntityFramework.dll
+C:\WORKSPACE\GlobalFarmEmail\IMAP\bin\Release\BD.pdb
+C:\WORKSPACE\GlobalFarmEmail\IMAP\bin\Release\BD.dll.config
+C:\WORKSPACE\GlobalFarmEmail\IMAP\bin\Release\EntityFramework.xml

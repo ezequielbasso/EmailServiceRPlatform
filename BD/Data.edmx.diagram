@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dd1397c4ea004909b73d0149998e0cec" Name="Diagram1" ZoomLevel="35">
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.AD" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.attachments" Width="1.5" PointX="10" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.Attachments_Page_Files" Width="1.5" PointX="14.5" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.Attachments_pages" Width="1.5" PointX="12.25" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.Comments" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.contrats" Width="1.5" PointX="14.75" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.departaments" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.departaments_users" Width="1.5" PointX="15.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.Email_Employees" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.employee_reg_local" Width="1.5" PointX="15.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.flow_record" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.invoice" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.invoice_files" Width="1.5" PointX="5.25" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.invoice_status" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.InvoiceAudit" Width="1.5" PointX="8.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.Notifications" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.Paycheck" Width="1.5" PointX="15.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.printers" Width="1.5" PointX="17" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.PropertysPaycheck" Width="1.5" PointX="17.5" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.provider" Width="1.5" PointX="19" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.providers_email" Width="1.5" PointX="21.25" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.received_emails" Width="1.5" PointX="7.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.RejectionComments" Width="1.5" PointX="5.25" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.roles" Width="1.5" PointX="10.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.service" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.status_attachment" Width="1.5" PointX="7.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.sysdiagrams" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.type_service" Width="1.5" PointX="16.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.TypeOfForm" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.UploadedFiles" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RICOH_PLATFORMModel.users" Width="1.5" PointX="13" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="RICOH_PLATFORMModel.FK_attachment_status_attachment" ManuallyRouted="false" />
+        <AssociationConnector Association="RICOH_PLATFORMModel.FK_Attachments_pages_attachments" ManuallyRouted="false" />
+        <AssociationConnector Association="RICOH_PLATFORMModel.FK_attachments_received_emails" ManuallyRouted="false" />
+        <AssociationConnector Association="RICOH_PLATFORMModel.FK_Attachments_Page_Files_Attachments_pages" ManuallyRouted="false" />
+        <AssociationConnector Association="RICOH_PLATFORMModel.FK_Comments_departaments" ManuallyRouted="false" />
+        <AssociationConnector Association="RICOH_PLATFORMModel.FK_Comments_invoice" ManuallyRouted="false" />
+        <AssociationConnector Association="RICOH_PLATFORMModel.FK_printers_printers" ManuallyRouted="false" />
+        <AssociationConnector Association="RICOH_PLATFORMModel.FK_departaments_users_departaments" ManuallyRouted="false" />
+        <AssociationConnector Association="RICOH_PLATFORMModel.FK_InvoiceAudit_departaments" ManuallyRouted="false" />
+        <AssociationConnector Association="RICOH_PLATFORMModel.FK_departaments_users_users" ManuallyRouted="false" />
+        <AssociationConnector Association="RICOH_PLATFORMModel.FK_employee_reg_local_users" ManuallyRouted="false" />
+        <AssociationConnector Association="RICOH_PLATFORMModel.FK_flow_record_invoice" ManuallyRouted="false" />
+        <AssociationConnector Association="RICOH_PLATFORMModel.FK_invoice_files_invoice" ManuallyRouted="false" />
+        <AssociationConnector Association="RICOH_PLATFORMModel.FK_invoice_invoice_status" ManuallyRouted="false" />
+        <AssociationConnector Association="RICOH_PLATFORMModel.FK_InvoiceAudit_invoice" ManuallyRouted="false" />
+        <AssociationConnector Association="RICOH_PLATFORMModel.FK_RejectionComments_invoice" ManuallyRouted="false" />
+        <AssociationConnector Association="RICOH_PLATFORMModel.FK_Paycheck_users" ManuallyRouted="false" />
+        <AssociationConnector Association="RICOH_PLATFORMModel.FK_PropertysPaycheck_Paycheck" ManuallyRouted="false" />
+        <AssociationConnector Association="RICOH_PLATFORMModel.FK_provider_type_service" ManuallyRouted="false" />
+        <AssociationConnector Association="RICOH_PLATFORMModel.FK_providers_email_provider" ManuallyRouted="false" />
+        <AssociationConnector Association="RICOH_PLATFORMModel.FK_users_roles" ManuallyRouted="false" />
+        <AssociationConnector Association="RICOH_PLATFORMModel.FK_PropertysPaycheck_TypeOfForm" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

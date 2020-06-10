@@ -1,0 +1,7 @@
+C:\WORKSPACE_GIT\GlobalFarm\IMAP\bin\Debug\IMAP.dll
+C:\WORKSPACE_GIT\GlobalFarm\IMAP\bin\Debug\IMAP.pdb
+C:\WORKSPACE_GIT\GlobalFarm\IMAP\bin\Debug\BouncyCastle.Crypto.dll
+C:\WORKSPACE_GIT\GlobalFarm\IMAP\bin\Debug\ImapX.dll
+C:\WORKSPACE_GIT\GlobalFarm\IMAP\obj\Debug\IMAP.csproj.CopyComplete
+C:\WORKSPACE_GIT\GlobalFarm\IMAP\obj\Debug\IMAP.dll
+C:\WORKSPACE_GIT\GlobalFarm\IMAP\obj\Debug\IMAP.pdb

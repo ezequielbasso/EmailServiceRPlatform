@@ -1,0 +1,5 @@
+C:\WORKSPACE_GIT\GlobalFarm\MailToolService\bin\Debug\MailToolService.exe.config
+C:\WORKSPACE_GIT\GlobalFarm\MailToolService\bin\Debug\MailToolService.exe
+C:\WORKSPACE_GIT\GlobalFarm\MailToolService\bin\Debug\MailToolService.pdb
+C:\WORKSPACE_GIT\GlobalFarm\MailToolService\obj\Debug\MailToolService.exe
+C:\WORKSPACE_GIT\GlobalFarm\MailToolService\obj\Debug\MailToolService.pdb
