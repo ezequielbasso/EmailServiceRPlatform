@@ -1,0 +1,779 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RICOH_PLATFORMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AD">
+    <Key>
+      <PropertyRef Name="AD_id" />
+    </Key>
+    <Property Name="AD_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AD_UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AD_emploeeID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="attachments">
+    <Key>
+      <PropertyRef Name="attachment_id" />
+    </Key>
+    <Property Name="attachment_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="filename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pathfile" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="received_emails_id" Type="Int32" Nullable="false" />
+    <Property Name="status_attachment_id" Type="Int32" Nullable="false" />
+    <Property Name="attachment_GUID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="status_attachment" Relationship="Self.FK_attachment_status_attachment" FromRole="attachments" ToRole="status_attachment" />
+    <NavigationProperty Name="Attachments_pages" Relationship="Self.FK_Attachments_pages_attachments" FromRole="attachments" ToRole="Attachments_pages" />
+    <NavigationProperty Name="received_emails" Relationship="Self.FK_attachments_received_emails" FromRole="attachments" ToRole="received_emails" />
+  </EntityType>
+  <EntityType Name="Attachments_Page_Files">
+    <Key>
+      <PropertyRef Name="FileID" />
+    </Key>
+    <Property Name="FileID" Type="Guid" Nullable="false" />
+    <Property Name="Attachment_page_id" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Extension" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DateUploaded" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Attachments_pages" Relationship="Self.FK_Attachments_Page_Files_Attachments_pages" FromRole="Attachments_Page_Files" ToRole="Attachments_pages" />
+  </EntityType>
+  <EntityType Name="Attachments_pages">
+    <Key>
+      <PropertyRef Name="Attachment_page_id" />
+    </Key>
+    <Property Name="Attachment_page_id" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Attachment_id" Type="Int32" Nullable="false" />
+    <Property Name="Number" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Cuit" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Customer_name" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Reg_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsInvoice" Type="Boolean" Nullable="false" />
+    <Property Name="IsAssigned" Type="Boolean" Nullable="false" />
+    <Property Name="IsProcessing" Type="Boolean" Nullable="false" />
+    <Property Name="IsVerified" Type="Boolean" Nullable="false" />
+    <Property Name="OrderNumber" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="AssociatedDocumentTypeID" Type="Int32" />
+    <Property Name="IsGreater" Type="Boolean" Nullable="false" />
+    <Property Name="ProviderCategoryID" Type="Int32" />
+    <Property Name="CurrencyID" Type="Int32" Nullable="false" />
+    <Property Name="HasAttached" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="attachments" Relationship="Self.FK_Attachments_pages_attachments" FromRole="Attachments_pages" ToRole="attachments" />
+    <NavigationProperty Name="Attachments_Page_Files" Relationship="Self.FK_Attachments_Page_Files_Attachments_pages" FromRole="Attachments_pages" ToRole="Attachments_Page_Files" />
+  </EntityType>
+  <EntityType Name="Comments">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="DepartamentID" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="CommentType" Type="Int32" Nullable="false" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="departaments" Relationship="Self.FK_Comments_departaments" FromRole="Comments" ToRole="departaments" />
+    <NavigationProperty Name="invoice" Relationship="Self.FK_Comments_invoice" FromRole="Comments" ToRole="invoice" />
+  </EntityType>
+  <EntityType Name="contrats">
+    <Key>
+      <PropertyRef Name="contrats_id" />
+    </Key>
+    <Property Name="contrats_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="contrats_number" Type="Int32" Nullable="false" />
+    <Property Name="customer_number" Type="Int64" />
+    <Property Name="employee_id" Type="Int32" />
+    <Property Name="biller" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="business_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="contrats_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="printers" Relationship="Self.FK_printers_printers" FromRole="contrats" ToRole="printers" />
+  </EntityType>
+  <EntityType Name="departaments">
+    <Key>
+      <PropertyRef Name="departament_id" />
+    </Key>
+    <Property Name="departament_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="departament_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Comments" Relationship="Self.FK_Comments_departaments" FromRole="departaments" ToRole="Comments" />
+    <NavigationProperty Name="departaments_users" Relationship="Self.FK_departaments_users_departaments" FromRole="departaments" ToRole="departaments_users" />
+    <NavigationProperty Name="InvoiceAudit" Relationship="Self.FK_InvoiceAudit_departaments" FromRole="departaments" ToRole="InvoiceAudit" />
+  </EntityType>
+  <EntityType Name="departaments_users">
+    <Key>
+      <PropertyRef Name="departaments_users_id" />
+    </Key>
+    <Property Name="departaments_users_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="departament_id" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="departaments" Relationship="Self.FK_departaments_users_departaments" FromRole="departaments_users" ToRole="departaments" />
+    <NavigationProperty Name="users" Relationship="Self.FK_departaments_users_users" FromRole="departaments_users" ToRole="users" />
+  </EntityType>
+  <EntityType Name="Email_Employees">
+    <Key>
+      <PropertyRef Name="Email_Employee_Id" />
+    </Key>
+    <Property Name="Email_Employee_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Employee_Id" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="employee_reg_local">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="Reg_employee" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="local_employee_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="users" Relationship="Self.FK_employee_reg_local_users" FromRole="employee_reg_local" ToRole="users" />
+  </EntityType>
+  <EntityType Name="flow_record">
+    <Key>
+      <PropertyRef Name="record_id" />
+    </Key>
+    <Property Name="record_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="invoice_id" Type="Int32" Nullable="false" />
+    <Property Name="record_date" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="status_process" Type="Boolean" />
+    <NavigationProperty Name="invoice" Relationship="Self.FK_flow_record_invoice" FromRole="flow_record" ToRole="invoice" />
+  </EntityType>
+  <EntityType Name="invoice">
+    <Key>
+      <PropertyRef Name="invoice_id" />
+    </Key>
+    <Property Name="invoice_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="invoice_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="invoice_cuit" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="invoice_date" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="invoice_amount" Type="Double" />
+    <Property Name="invoice_status_id" Type="Int32" />
+    <Property Name="departament_id" Type="Int32" />
+    <Property Name="amount_check" Type="Boolean" />
+    <Property Name="attachment_id" Type="Int32" />
+    <Property Name="order_num" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="partial_assignment" Type="Boolean" Nullable="false" />
+    <Property Name="InvoiceFile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="business_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="isGreater" Type="Boolean" Nullable="false" />
+    <Property Name="CurrencyID" Type="Int32" Nullable="false" />
+    <Property Name="AssociatedDocumentTypeID" Type="Int32" Nullable="false" />
+    <Property Name="ProviderCategoryID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Comments" Relationship="Self.FK_Comments_invoice" FromRole="invoice" ToRole="Comments" />
+    <NavigationProperty Name="flow_record" Relationship="Self.FK_flow_record_invoice" FromRole="invoice" ToRole="flow_record" />
+    <NavigationProperty Name="invoice_files" Relationship="Self.FK_invoice_files_invoice" FromRole="invoice" ToRole="invoice_files" />
+    <NavigationProperty Name="invoice_status" Relationship="Self.FK_invoice_invoice_status" FromRole="invoice" ToRole="invoice_status" />
+    <NavigationProperty Name="InvoiceAudit" Relationship="Self.FK_InvoiceAudit_invoice" FromRole="invoice" ToRole="InvoiceAudit" />
+    <NavigationProperty Name="RejectionComments" Relationship="Self.FK_RejectionComments_invoice" FromRole="invoice" ToRole="RejectionComments" />
+    <Property Name="PaidDate" Type="DateTime" Precision="7" />
+  </EntityType>
+  <EntityType Name="invoice_files">
+    <Key>
+      <PropertyRef Name="invoice_files_id" />
+    </Key>
+    <Property Name="invoice_files_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="invoice_id" Type="Int32" />
+    <Property Name="invoice_path" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="invoice" Relationship="Self.FK_invoice_files_invoice" FromRole="invoice_files" ToRole="invoice" />
+  </EntityType>
+  <EntityType Name="invoice_status">
+    <Key>
+      <PropertyRef Name="invoice_status_id" />
+    </Key>
+    <Property Name="invoice_status_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="invoice_status_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="invoice" Relationship="Self.FK_invoice_invoice_status" FromRole="invoice_status" ToRole="invoice" />
+  </EntityType>
+  <EntityType Name="InvoiceAudit">
+    <Key>
+      <PropertyRef Name="InvoiceAuditID" />
+    </Key>
+    <Property Name="InvoiceAuditID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AuditDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="InvoiceID" Type="Int32" Nullable="false" />
+    <Property Name="DepartamentID" Type="Int32" Nullable="false" />
+    <Property Name="ActionType" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="departaments" Relationship="Self.FK_InvoiceAudit_departaments" FromRole="InvoiceAudit" ToRole="departaments" />
+    <NavigationProperty Name="invoice" Relationship="Self.FK_InvoiceAudit_invoice" FromRole="InvoiceAudit" ToRole="invoice" />
+  </EntityType>
+  <EntityType Name="Notifications">
+    <Key>
+      <PropertyRef Name="NotificationID" />
+    </Key>
+    <Property Name="NotificationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PrinterID" Type="Int32" Nullable="false" />
+    <Property Name="ContractID" Type="Int32" Nullable="false" />
+    <Property Name="ExpirationDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="RemainingDays" Type="Int32" Nullable="false" />
+    <Property Name="LastNotification" Type="DateTime" Precision="7" />
+    <Property Name="NextNotification" Type="DateTime" Precision="7" />
+    <Property Name="CanNotify" Type="Int64" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Subject" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NotificationNumber" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <Property Name="EmployeeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EmployeeEmail" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="BusinessName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ContractNumber" Type="Int32" />
+    <Property Name="SerialNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Paycheck">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DocumentID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="IsChecked" Type="Boolean" Nullable="false" />
+    <Property Name="TimeStamp" Type="DateTime" Precision="3" />
+    <Property Name="EmployeeLocalID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="users" Relationship="Self.FK_Paycheck_users" FromRole="Paycheck" ToRole="users" />
+    <NavigationProperty Name="PropertysPaycheck" Relationship="Self.FK_PropertysPaycheck_Paycheck" FromRole="Paycheck" ToRole="PropertysPaycheck" />
+  </EntityType>
+  <EntityType Name="printers">
+    <Key>
+      <PropertyRef Name="printer_id" />
+    </Key>
+    <Property Name="printer_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="model" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="installation_date" Type="DateTime" Precision="0" />
+    <Property Name="contrats_id" Type="Int32" Nullable="false" />
+    <Property Name="serial_number" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="expiration_date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="contrats" Relationship="Self.FK_printers_printers" FromRole="printers" ToRole="contrats" />
+  </EntityType>
+  <EntityType Name="PropertysPaycheck">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Month" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Year" Type="Int32" Nullable="false" />
+    <Property Name="FormID" Type="Int32" Nullable="false" />
+    <Property Name="DocumentName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PaycheckID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Paycheck" Relationship="Self.FK_PropertysPaycheck_Paycheck" FromRole="PropertysPaycheck" ToRole="Paycheck" />
+    <NavigationProperty Name="TypeOfForm" Relationship="RICOH_PLATFORMModel.FK_PropertysPaycheck_TypeOfForm" FromRole="PropertysPaycheck" ToRole="TypeOfForm" />
+  </EntityType>
+  <EntityType Name="provider">
+    <Key>
+      <PropertyRef Name="provider_id" />
+    </Key>
+    <Property Name="provider_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="provider_cuit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="provider_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="type_service_id" Type="Int32" />
+    <NavigationProperty Name="type_service" Relationship="Self.FK_provider_type_service" FromRole="provider" ToRole="type_service" />
+    <NavigationProperty Name="providers_email" Relationship="Self.FK_providers_email_provider" FromRole="provider" ToRole="providers_email" />
+  </EntityType>
+  <EntityType Name="providers_email">
+    <Key>
+      <PropertyRef Name="providers_email_id" />
+    </Key>
+    <Property Name="providers_email_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="providers_email_address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="provider_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="provider" Relationship="Self.FK_providers_email_provider" FromRole="providers_email" ToRole="provider" />
+  </EntityType>
+  <EntityType Name="received_emails">
+    <Key>
+      <PropertyRef Name="received_emails_id" />
+    </Key>
+    <Property Name="received_emails_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="email_address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email_subject" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="email_body" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="email_date" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="email_attachment_quantity" Type="Int32" Nullable="false" />
+    <Property Name="provider_id" Type="Int32" />
+    <Property Name="Readed" Type="Boolean" Nullable="false" />
+    <Property Name="ReadedDate" Type="DateTime" Precision="7" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="received_email_GUID" Type="Guid" />
+    <NavigationProperty Name="attachments" Relationship="Self.FK_attachments_received_emails" FromRole="received_emails" ToRole="attachments" />
+    <Property Name="SenderName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RejectionComments">
+    <Key>
+      <PropertyRef Name="RejectionCommentID" />
+    </Key>
+    <Property Name="RejectionCommentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Precision="7" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="invoice_id" Type="Int32" Nullable="false" />
+    <Property Name="department_id" Type="Int32" />
+    <NavigationProperty Name="invoice" Relationship="Self.FK_RejectionComments_invoice" FromRole="RejectionComments" ToRole="invoice" />
+  </EntityType>
+  <EntityType Name="roles">
+    <Key>
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="role_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="role_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="users" Relationship="Self.FK_users_roles" FromRole="roles" ToRole="users" />
+  </EntityType>
+  <EntityType Name="service">
+    <Key>
+      <PropertyRef Name="service_id" />
+    </Key>
+    <Property Name="service_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="provider_name" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="status_attachment">
+    <Key>
+      <PropertyRef Name="status_attachment_id" />
+    </Key>
+    <Property Name="status_attachment_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="status_attachment_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="attachments" Relationship="Self.FK_attachment_status_attachment" FromRole="status_attachment" ToRole="attachments" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="type_service">
+    <Key>
+      <PropertyRef Name="type_service_id" />
+    </Key>
+    <Property Name="type_service_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="service_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="provider" Relationship="Self.FK_provider_type_service" FromRole="type_service" ToRole="provider" />
+  </EntityType>
+  <EntityType Name="TypeOfForm">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FormID" Type="Int32" Nullable="false" />
+    <Property Name="FormName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="PropertysPaycheck" Relationship="RICOH_PLATFORMModel.FK_PropertysPaycheck_TypeOfForm" FromRole="TypeOfForm" ToRole="PropertysPaycheck" />
+  </EntityType>
+  <EntityType Name="UploadedFiles">
+    <Key>
+      <PropertyRef Name="UploadedFileID" />
+    </Key>
+    <Property Name="UploadedFileID" Type="Guid" Nullable="false" />
+    <Property Name="FileName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="OriginalName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Uploaded" Type="DateTime" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="rule_id" Type="Int32" />
+    <Property Name="Pwd" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="departaments_users" Relationship="Self.FK_departaments_users_users" FromRole="users" ToRole="departaments_users" />
+    <NavigationProperty Name="employee_reg_local" Relationship="Self.FK_employee_reg_local_users" FromRole="users" ToRole="employee_reg_local" />
+    <NavigationProperty Name="Paycheck" Relationship="Self.FK_Paycheck_users" FromRole="users" ToRole="Paycheck" />
+    <NavigationProperty Name="roles" Relationship="Self.FK_users_roles" FromRole="users" ToRole="roles" />
+  </EntityType>
+  <Association Name="FK_attachment_status_attachment">
+    <End Role="status_attachment" Type="Self.status_attachment" Multiplicity="1" />
+    <End Role="attachments" Type="Self.attachments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="status_attachment">
+        <PropertyRef Name="status_attachment_id" />
+      </Principal>
+      <Dependent Role="attachments">
+        <PropertyRef Name="status_attachment_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Attachments_pages_attachments">
+    <End Role="attachments" Type="Self.attachments" Multiplicity="1" />
+    <End Role="Attachments_pages" Type="Self.Attachments_pages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="attachments">
+        <PropertyRef Name="attachment_id" />
+      </Principal>
+      <Dependent Role="Attachments_pages">
+        <PropertyRef Name="Attachment_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_attachments_received_emails">
+    <End Role="received_emails" Type="Self.received_emails" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="attachments" Type="Self.attachments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="received_emails">
+        <PropertyRef Name="received_emails_id" />
+      </Principal>
+      <Dependent Role="attachments">
+        <PropertyRef Name="received_emails_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Attachments_Page_Files_Attachments_pages">
+    <End Role="Attachments_pages" Type="Self.Attachments_pages" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Attachments_Page_Files" Type="Self.Attachments_Page_Files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Attachments_pages">
+        <PropertyRef Name="Attachment_page_id" />
+      </Principal>
+      <Dependent Role="Attachments_Page_Files">
+        <PropertyRef Name="Attachment_page_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_departaments">
+    <End Role="departaments" Type="Self.departaments" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="departaments">
+        <PropertyRef Name="departament_id" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="DepartamentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_invoice">
+    <End Role="invoice" Type="Self.invoice" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="invoice">
+        <PropertyRef Name="invoice_id" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="InvoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_printers_printers">
+    <End Role="contrats" Type="Self.contrats" Multiplicity="1" />
+    <End Role="printers" Type="Self.printers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="contrats">
+        <PropertyRef Name="contrats_id" />
+      </Principal>
+      <Dependent Role="printers">
+        <PropertyRef Name="contrats_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_departaments_users_departaments">
+    <End Role="departaments" Type="Self.departaments" Multiplicity="1" />
+    <End Role="departaments_users" Type="Self.departaments_users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="departaments">
+        <PropertyRef Name="departament_id" />
+      </Principal>
+      <Dependent Role="departaments_users">
+        <PropertyRef Name="departament_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InvoiceAudit_departaments">
+    <End Role="departaments" Type="Self.departaments" Multiplicity="1" />
+    <End Role="InvoiceAudit" Type="Self.InvoiceAudit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="departaments">
+        <PropertyRef Name="departament_id" />
+      </Principal>
+      <Dependent Role="InvoiceAudit">
+        <PropertyRef Name="DepartamentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_departaments_users_users">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="departaments_users" Type="Self.departaments_users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="departaments_users">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_employee_reg_local_users">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="employee_reg_local" Type="Self.employee_reg_local" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="employee_reg_local">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_flow_record_invoice">
+    <End Role="invoice" Type="Self.invoice" Multiplicity="1" />
+    <End Role="flow_record" Type="Self.flow_record" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="invoice">
+        <PropertyRef Name="invoice_id" />
+      </Principal>
+      <Dependent Role="flow_record">
+        <PropertyRef Name="invoice_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_invoice_files_invoice">
+    <End Role="invoice" Type="Self.invoice" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="invoice_files" Type="Self.invoice_files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="invoice">
+        <PropertyRef Name="invoice_id" />
+      </Principal>
+      <Dependent Role="invoice_files">
+        <PropertyRef Name="invoice_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_invoice_invoice_status">
+    <End Role="invoice_status" Type="Self.invoice_status" Multiplicity="0..1" />
+    <End Role="invoice" Type="Self.invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="invoice_status">
+        <PropertyRef Name="invoice_status_id" />
+      </Principal>
+      <Dependent Role="invoice">
+        <PropertyRef Name="invoice_status_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InvoiceAudit_invoice">
+    <End Role="invoice" Type="Self.invoice" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="InvoiceAudit" Type="Self.InvoiceAudit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="invoice">
+        <PropertyRef Name="invoice_id" />
+      </Principal>
+      <Dependent Role="InvoiceAudit">
+        <PropertyRef Name="InvoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RejectionComments_invoice">
+    <End Role="invoice" Type="Self.invoice" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RejectionComments" Type="Self.RejectionComments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="invoice">
+        <PropertyRef Name="invoice_id" />
+      </Principal>
+      <Dependent Role="RejectionComments">
+        <PropertyRef Name="invoice_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Paycheck_users">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="Paycheck" Type="Self.Paycheck" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="Paycheck">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PropertysPaycheck_Paycheck">
+    <End Role="Paycheck" Type="Self.Paycheck" Multiplicity="1" />
+    <End Role="PropertysPaycheck" Type="Self.PropertysPaycheck" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paycheck">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PropertysPaycheck">
+        <PropertyRef Name="PaycheckID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_provider_type_service">
+    <End Role="type_service" Type="Self.type_service" Multiplicity="0..1" />
+    <End Role="provider" Type="Self.provider" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="type_service">
+        <PropertyRef Name="type_service_id" />
+      </Principal>
+      <Dependent Role="provider">
+        <PropertyRef Name="type_service_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_providers_email_provider">
+    <End Role="provider" Type="Self.provider" Multiplicity="1" />
+    <End Role="providers_email" Type="Self.providers_email" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="provider">
+        <PropertyRef Name="provider_id" />
+      </Principal>
+      <Dependent Role="providers_email">
+        <PropertyRef Name="provider_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_users_roles">
+    <End Role="roles" Type="Self.roles" Multiplicity="0..1" />
+    <End Role="users" Type="Self.users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="roles">
+        <PropertyRef Name="role_id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="rule_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RPEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AD" EntityType="Self.AD" />
+    <EntitySet Name="attachments" EntityType="Self.attachments" />
+    <EntitySet Name="Attachments_Page_Files" EntityType="Self.Attachments_Page_Files" />
+    <EntitySet Name="Attachments_pages" EntityType="Self.Attachments_pages" />
+    <EntitySet Name="Comments" EntityType="Self.Comments" />
+    <EntitySet Name="contrats" EntityType="Self.contrats" />
+    <EntitySet Name="departaments" EntityType="Self.departaments" />
+    <EntitySet Name="departaments_users" EntityType="Self.departaments_users" />
+    <EntitySet Name="Email_Employees" EntityType="Self.Email_Employees" />
+    <EntitySet Name="employee_reg_local" EntityType="Self.employee_reg_local" />
+    <EntitySet Name="flow_record" EntityType="Self.flow_record" />
+    <EntitySet Name="invoice" EntityType="Self.invoice" />
+    <EntitySet Name="invoice_files" EntityType="Self.invoice_files" />
+    <EntitySet Name="invoice_status" EntityType="Self.invoice_status" />
+    <EntitySet Name="InvoiceAudit" EntityType="Self.InvoiceAudit" />
+    <EntitySet Name="Notifications" EntityType="Self.Notifications" />
+    <EntitySet Name="Paycheck" EntityType="Self.Paycheck" />
+    <EntitySet Name="printers" EntityType="Self.printers" />
+    <EntitySet Name="PropertysPaycheck" EntityType="Self.PropertysPaycheck" />
+    <EntitySet Name="provider" EntityType="Self.provider" />
+    <EntitySet Name="providers_email" EntityType="Self.providers_email" />
+    <EntitySet Name="received_emails" EntityType="Self.received_emails" />
+    <EntitySet Name="RejectionComments" EntityType="Self.RejectionComments" />
+    <EntitySet Name="roles" EntityType="Self.roles" />
+    <EntitySet Name="service" EntityType="Self.service" />
+    <EntitySet Name="status_attachment" EntityType="Self.status_attachment" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="type_service" EntityType="Self.type_service" />
+    <EntitySet Name="TypeOfForm" EntityType="Self.TypeOfForm" />
+    <EntitySet Name="UploadedFiles" EntityType="Self.UploadedFiles" />
+    <EntitySet Name="users" EntityType="Self.users" />
+    <AssociationSet Name="FK_attachment_status_attachment" Association="Self.FK_attachment_status_attachment">
+      <End Role="status_attachment" EntitySet="status_attachment" />
+      <End Role="attachments" EntitySet="attachments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Attachments_pages_attachments" Association="Self.FK_Attachments_pages_attachments">
+      <End Role="attachments" EntitySet="attachments" />
+      <End Role="Attachments_pages" EntitySet="Attachments_pages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_attachments_received_emails" Association="Self.FK_attachments_received_emails">
+      <End Role="received_emails" EntitySet="received_emails" />
+      <End Role="attachments" EntitySet="attachments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Attachments_Page_Files_Attachments_pages" Association="Self.FK_Attachments_Page_Files_Attachments_pages">
+      <End Role="Attachments_pages" EntitySet="Attachments_pages" />
+      <End Role="Attachments_Page_Files" EntitySet="Attachments_Page_Files" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_departaments" Association="Self.FK_Comments_departaments">
+      <End Role="departaments" EntitySet="departaments" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_invoice" Association="Self.FK_Comments_invoice">
+      <End Role="invoice" EntitySet="invoice" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_printers_printers" Association="Self.FK_printers_printers">
+      <End Role="contrats" EntitySet="contrats" />
+      <End Role="printers" EntitySet="printers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_departaments_users_departaments" Association="Self.FK_departaments_users_departaments">
+      <End Role="departaments" EntitySet="departaments" />
+      <End Role="departaments_users" EntitySet="departaments_users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InvoiceAudit_departaments" Association="Self.FK_InvoiceAudit_departaments">
+      <End Role="departaments" EntitySet="departaments" />
+      <End Role="InvoiceAudit" EntitySet="InvoiceAudit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_departaments_users_users" Association="Self.FK_departaments_users_users">
+      <End Role="users" EntitySet="users" />
+      <End Role="departaments_users" EntitySet="departaments_users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_employee_reg_local_users" Association="Self.FK_employee_reg_local_users">
+      <End Role="users" EntitySet="users" />
+      <End Role="employee_reg_local" EntitySet="employee_reg_local" />
+    </AssociationSet>
+    <AssociationSet Name="FK_flow_record_invoice" Association="Self.FK_flow_record_invoice">
+      <End Role="invoice" EntitySet="invoice" />
+      <End Role="flow_record" EntitySet="flow_record" />
+    </AssociationSet>
+    <AssociationSet Name="FK_invoice_files_invoice" Association="Self.FK_invoice_files_invoice">
+      <End Role="invoice" EntitySet="invoice" />
+      <End Role="invoice_files" EntitySet="invoice_files" />
+    </AssociationSet>
+    <AssociationSet Name="FK_invoice_invoice_status" Association="Self.FK_invoice_invoice_status">
+      <End Role="invoice_status" EntitySet="invoice_status" />
+      <End Role="invoice" EntitySet="invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InvoiceAudit_invoice" Association="Self.FK_InvoiceAudit_invoice">
+      <End Role="invoice" EntitySet="invoice" />
+      <End Role="InvoiceAudit" EntitySet="InvoiceAudit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RejectionComments_invoice" Association="Self.FK_RejectionComments_invoice">
+      <End Role="invoice" EntitySet="invoice" />
+      <End Role="RejectionComments" EntitySet="RejectionComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Paycheck_users" Association="Self.FK_Paycheck_users">
+      <End Role="users" EntitySet="users" />
+      <End Role="Paycheck" EntitySet="Paycheck" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PropertysPaycheck_Paycheck" Association="Self.FK_PropertysPaycheck_Paycheck">
+      <End Role="Paycheck" EntitySet="Paycheck" />
+      <End Role="PropertysPaycheck" EntitySet="PropertysPaycheck" />
+    </AssociationSet>
+    <AssociationSet Name="FK_provider_type_service" Association="Self.FK_provider_type_service">
+      <End Role="type_service" EntitySet="type_service" />
+      <End Role="provider" EntitySet="provider" />
+    </AssociationSet>
+    <AssociationSet Name="FK_providers_email_provider" Association="Self.FK_providers_email_provider">
+      <End Role="provider" EntitySet="provider" />
+      <End Role="providers_email" EntitySet="providers_email" />
+    </AssociationSet>
+    <AssociationSet Name="FK_users_roles" Association="Self.FK_users_roles">
+      <End Role="roles" EntitySet="roles" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PropertysPaycheck_TypeOfForm" Association="RICOH_PLATFORMModel.FK_PropertysPaycheck_TypeOfForm">
+      <End Role="TypeOfForm" EntitySet="TypeOfForm" />
+      <End Role="PropertysPaycheck" EntitySet="PropertysPaycheck" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK_PropertysPaycheck_TypeOfForm">
+    <End Type="RICOH_PLATFORMModel.TypeOfForm" Role="TypeOfForm" Multiplicity="1" />
+    <End Type="RICOH_PLATFORMModel.PropertysPaycheck" Role="PropertysPaycheck" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeOfForm">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PropertysPaycheck">
+        <PropertyRef Name="FormID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

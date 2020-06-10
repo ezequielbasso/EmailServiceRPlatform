@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RICOH_PLATFORMModelStoreContainer" CdmEntityContainer="RPEntities">
+    <EntitySetMapping Name="AD">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.AD">
+        <MappingFragment StoreEntitySet="AD">
+          <ScalarProperty Name="AD_id" ColumnName="AD_id" />
+          <ScalarProperty Name="AD_UserName" ColumnName="AD_UserName" />
+          <ScalarProperty Name="AD_emploeeID" ColumnName="AD_emploeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="attachments">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.attachments">
+        <MappingFragment StoreEntitySet="attachments">
+          <ScalarProperty Name="attachment_id" ColumnName="attachment_id" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="pathfile" ColumnName="pathfile" />
+          <ScalarProperty Name="received_emails_id" ColumnName="received_emails_id" />
+          <ScalarProperty Name="status_attachment_id" ColumnName="status_attachment_id" />
+          <ScalarProperty Name="attachment_GUID" ColumnName="attachment_GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Attachments_Page_Files">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.Attachments_Page_Files">
+        <MappingFragment StoreEntitySet="Attachments_Page_Files">
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="Attachment_page_id" ColumnName="Attachment_page_id" />
+          <ScalarProperty Name="Extension" ColumnName="Extension" />
+          <ScalarProperty Name="DateUploaded" ColumnName="DateUploaded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Attachments_pages">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.Attachments_pages">
+        <MappingFragment StoreEntitySet="Attachments_pages">
+          <ScalarProperty Name="Attachment_page_id" ColumnName="Attachment_page_id" />
+          <ScalarProperty Name="Attachment_id" ColumnName="Attachment_id" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Cuit" ColumnName="Cuit" />
+          <ScalarProperty Name="Customer_name" ColumnName="Customer_name" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Reg_date" ColumnName="Reg_date" />
+          <ScalarProperty Name="IsInvoice" ColumnName="IsInvoice" />
+          <ScalarProperty Name="IsAssigned" ColumnName="IsAssigned" />
+          <ScalarProperty Name="IsProcessing" ColumnName="IsProcessing" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="AssociatedDocumentTypeID" ColumnName="AssociatedDocumentTypeID" />
+          <ScalarProperty Name="IsGreater" ColumnName="IsGreater" />
+          <ScalarProperty Name="ProviderCategoryID" ColumnName="ProviderCategoryID" />
+          <ScalarProperty Name="CurrencyID" ColumnName="CurrencyID" />
+          <ScalarProperty Name="HasAttached" ColumnName="HasAttached" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.Comments">
+        <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="DepartamentID" ColumnName="DepartamentID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="CommentType" ColumnName="CommentType" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contrats">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.contrats">
+        <MappingFragment StoreEntitySet="contrats">
+          <ScalarProperty Name="contrats_id" ColumnName="contrats_id" />
+          <ScalarProperty Name="contrats_number" ColumnName="contrats_number" />
+          <ScalarProperty Name="customer_number" ColumnName="customer_number" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="biller" ColumnName="biller" />
+          <ScalarProperty Name="business_name" ColumnName="business_name" />
+          <ScalarProperty Name="contrats_type" ColumnName="contrats_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="departaments">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.departaments">
+        <MappingFragment StoreEntitySet="departaments">
+          <ScalarProperty Name="departament_id" ColumnName="departament_id" />
+          <ScalarProperty Name="departament_name" ColumnName="departament_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="departaments_users">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.departaments_users">
+        <MappingFragment StoreEntitySet="departaments_users">
+          <ScalarProperty Name="departaments_users_id" ColumnName="departaments_users_id" />
+          <ScalarProperty Name="departament_id" ColumnName="departament_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Email_Employees">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.Email_Employees">
+        <MappingFragment StoreEntitySet="Email_Employees">
+          <ScalarProperty Name="Email_Employee_Id" ColumnName="Email_Employee_Id" />
+          <ScalarProperty Name="Employee_Id" ColumnName="Employee_Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="employee_reg_local">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.employee_reg_local">
+        <MappingFragment StoreEntitySet="employee_reg_local">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="Reg_employee" ColumnName="Reg_employee" />
+          <ScalarProperty Name="local_employee_id" ColumnName="local_employee_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="flow_record">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.flow_record">
+        <MappingFragment StoreEntitySet="flow_record">
+          <ScalarProperty Name="record_id" ColumnName="record_id" />
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+          <ScalarProperty Name="record_date" ColumnName="record_date" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="status_process" ColumnName="status_process" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="invoice">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.invoice">
+        <MappingFragment StoreEntitySet="invoice">
+          <ScalarProperty Name="PaidDate" ColumnName="PaidDate" />
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+          <ScalarProperty Name="invoice_number" ColumnName="invoice_number" />
+          <ScalarProperty Name="invoice_cuit" ColumnName="invoice_cuit" />
+          <ScalarProperty Name="invoice_date" ColumnName="invoice_date" />
+          <ScalarProperty Name="invoice_amount" ColumnName="invoice_amount" />
+          <ScalarProperty Name="invoice_status_id" ColumnName="invoice_status_id" />
+          <ScalarProperty Name="departament_id" ColumnName="departament_id" />
+          <ScalarProperty Name="amount_check" ColumnName="amount_check" />
+          <ScalarProperty Name="attachment_id" ColumnName="attachment_id" />
+          <ScalarProperty Name="order_num" ColumnName="order_num" />
+          <ScalarProperty Name="partial_assignment" ColumnName="partial_assignment" />
+          <ScalarProperty Name="InvoiceFile" ColumnName="InvoiceFile" />
+          <ScalarProperty Name="business_name" ColumnName="business_name" />
+          <ScalarProperty Name="isGreater" ColumnName="isGreater" />
+          <ScalarProperty Name="CurrencyID" ColumnName="CurrencyID" />
+          <ScalarProperty Name="AssociatedDocumentTypeID" ColumnName="AssociatedDocumentTypeID" />
+          <ScalarProperty Name="ProviderCategoryID" ColumnName="ProviderCategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="invoice_files">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.invoice_files">
+        <MappingFragment StoreEntitySet="invoice_files">
+          <ScalarProperty Name="invoice_files_id" ColumnName="invoice_files_id" />
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+          <ScalarProperty Name="invoice_path" ColumnName="invoice_path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="invoice_status">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.invoice_status">
+        <MappingFragment StoreEntitySet="invoice_status">
+          <ScalarProperty Name="invoice_status_id" ColumnName="invoice_status_id" />
+          <ScalarProperty Name="invoice_status_name" ColumnName="invoice_status_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvoiceAudit">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.InvoiceAudit">
+        <MappingFragment StoreEntitySet="InvoiceAudit">
+          <ScalarProperty Name="InvoiceAuditID" ColumnName="InvoiceAuditID" />
+          <ScalarProperty Name="AuditDate" ColumnName="AuditDate" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="DepartamentID" ColumnName="DepartamentID" />
+          <ScalarProperty Name="ActionType" ColumnName="ActionType" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notifications">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.Notifications">
+        <MappingFragment StoreEntitySet="Notifications">
+          <ScalarProperty Name="NotificationID" ColumnName="NotificationID" />
+          <ScalarProperty Name="PrinterID" ColumnName="PrinterID" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+          <ScalarProperty Name="RemainingDays" ColumnName="RemainingDays" />
+          <ScalarProperty Name="LastNotification" ColumnName="LastNotification" />
+          <ScalarProperty Name="NextNotification" ColumnName="NextNotification" />
+          <ScalarProperty Name="CanNotify" ColumnName="CanNotify" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="NotificationNumber" ColumnName="NotificationNumber" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="EmployeeEmail" ColumnName="EmployeeEmail" />
+          <ScalarProperty Name="BusinessName" ColumnName="BusinessName" />
+          <ScalarProperty Name="ContractNumber" ColumnName="ContractNumber" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paycheck">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.Paycheck">
+        <MappingFragment StoreEntitySet="Paycheck">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="IsChecked" ColumnName="IsChecked" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="EmployeeLocalID" ColumnName="EmployeeLocalID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="printers">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.printers">
+        <MappingFragment StoreEntitySet="printers">
+          <ScalarProperty Name="printer_id" ColumnName="printer_id" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="installation_date" ColumnName="installation_date" />
+          <ScalarProperty Name="contrats_id" ColumnName="contrats_id" />
+          <ScalarProperty Name="serial_number" ColumnName="serial_number" />
+          <ScalarProperty Name="expiration_date" ColumnName="expiration_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropertysPaycheck">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.PropertysPaycheck">
+        <MappingFragment StoreEntitySet="PropertysPaycheck">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="FormID" ColumnName="FormID" />
+          <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+          <ScalarProperty Name="PaycheckID" ColumnName="PaycheckID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="provider">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.provider">
+        <MappingFragment StoreEntitySet="provider">
+          <ScalarProperty Name="provider_id" ColumnName="provider_id" />
+          <ScalarProperty Name="provider_cuit" ColumnName="provider_cuit" />
+          <ScalarProperty Name="provider_name" ColumnName="provider_name" />
+          <ScalarProperty Name="type_service_id" ColumnName="type_service_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="providers_email">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.providers_email">
+        <MappingFragment StoreEntitySet="providers_email">
+          <ScalarProperty Name="providers_email_id" ColumnName="providers_email_id" />
+          <ScalarProperty Name="providers_email_address" ColumnName="providers_email_address" />
+          <ScalarProperty Name="provider_id" ColumnName="provider_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="received_emails">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.received_emails">
+        <MappingFragment StoreEntitySet="received_emails">
+          <ScalarProperty Name="SenderName" ColumnName="SenderName" />
+          <ScalarProperty Name="received_emails_id" ColumnName="received_emails_id" />
+          <ScalarProperty Name="email_address" ColumnName="email_address" />
+          <ScalarProperty Name="email_subject" ColumnName="email_subject" />
+          <ScalarProperty Name="email_body" ColumnName="email_body" />
+          <ScalarProperty Name="email_date" ColumnName="email_date" />
+          <ScalarProperty Name="email_attachment_quantity" ColumnName="email_attachment_quantity" />
+          <ScalarProperty Name="provider_id" ColumnName="provider_id" />
+          <ScalarProperty Name="Readed" ColumnName="Readed" />
+          <ScalarProperty Name="ReadedDate" ColumnName="ReadedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="received_email_GUID" ColumnName="received_email_GUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RejectionComments">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.RejectionComments">
+        <MappingFragment StoreEntitySet="RejectionComments">
+          <ScalarProperty Name="RejectionCommentID" ColumnName="RejectionCommentID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="roles">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.roles">
+        <MappingFragment StoreEntitySet="roles">
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="role_name" ColumnName="role_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="service">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.service">
+        <MappingFragment StoreEntitySet="service">
+          <ScalarProperty Name="service_id" ColumnName="service_id" />
+          <ScalarProperty Name="provider_name" ColumnName="provider_name" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="status_attachment">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.status_attachment">
+        <MappingFragment StoreEntitySet="status_attachment">
+          <ScalarProperty Name="status_attachment_id" ColumnName="status_attachment_id" />
+          <ScalarProperty Name="status_attachment_name" ColumnName="status_attachment_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="type_service">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.type_service">
+        <MappingFragment StoreEntitySet="type_service">
+          <ScalarProperty Name="type_service_id" ColumnName="type_service_id" />
+          <ScalarProperty Name="service_name" ColumnName="service_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeOfForm">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.TypeOfForm">
+        <MappingFragment StoreEntitySet="TypeOfForm">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FormID" ColumnName="FormID" />
+          <ScalarProperty Name="FormName" ColumnName="FormName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UploadedFiles">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.UploadedFiles">
+        <MappingFragment StoreEntitySet="UploadedFiles">
+          <ScalarProperty Name="UploadedFileID" ColumnName="UploadedFileID" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="OriginalName" ColumnName="OriginalName" />
+          <ScalarProperty Name="Uploaded" ColumnName="Uploaded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="RICOH_PLATFORMModel.users">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user_login" ColumnName="user_login" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="rule_id" ColumnName="rule_id" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
